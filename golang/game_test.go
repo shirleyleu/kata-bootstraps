@@ -4,7 +4,6 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
-
 	"github.com/stretchr/testify/assert"
 )
 
@@ -37,14 +36,6 @@ func Test_roll_rejects_more_than_10_pins(t *testing.T) {
 	assert.Error(t, g.roll(11))
 }
 
-func Test_two_consecutive_rolls_does_not_return_score_greater_than_10(t *testing.T) {
-	g := game{}
-
-	require.NoError(t, g.roll(5))
-
-	//TODO: assert.Error(t, g.roll(6))
-}
-
 func Test_spare_is_calculated_with_third_roll_bonus(t *testing.T) {
 	g := game{}
 
@@ -54,3 +45,5 @@ func Test_spare_is_calculated_with_third_roll_bonus(t *testing.T) {
 
 	assert.Equal(t, 12, g.score())
 }
+
+
